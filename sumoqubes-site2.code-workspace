@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../sumoqubes-site/apps"
+		},
+		{
+			"path": "../sumoqubes-site/fonts"
+		},
+		{
+			"path": "../sumoqubes-site/outstatic"
+		},
+		{
+			"path": "../sumoqubes-site/public"
+		},
+		{
+			"path": "../sumoqubes-site/src"
+		}
+	],
+	"settings": {}
+}
