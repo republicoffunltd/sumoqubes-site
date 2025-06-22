@@ -1,0 +1,134 @@
+{
+  "commit": "63b129bf07e39a9f365b908fd99ec667b3338248",
+  "generated": "2025-05-04T13:25:00.000Z",
+  "metadata": [
+    {
+      "__outstatic": {
+        "commit": "7c8dd4abd9f578fd2108bafd8be595ef8d81754c",
+        "hash": "714974931",
+        "path": "outstatic/content/community/community-page.md"
+      },
+      "author": {
+        "name": "moykul",
+        "picture": "https://avatars.githubusercontent.com/u/13137902?v=4"
+      },
+      "collection": "community",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-08-17T07:50:58.120Z",
+      "slug": "community-page",
+      "status": "draft",
+      "title": "Community Page"
+    },
+    {
+      "__outstatic": {
+        "commit": "05fb7a441222aeeabb3394801ce8d8e38dd8181c",
+        "hash": "1885752365",
+        "path": "outstatic/content/pages/home.md"
+      },
+      "author": {
+        "name": "moykul",
+        "picture": "https://avatars.githubusercontent.com/u/13137902?v=4"
+      },
+      "collection": "pages",
+      "coverImage": "/images/mainbanner-MzMT.jpg",
+      "description": "",
+      "publishedAt": "2024-08-17T07:48:17.135Z",
+      "slug": "home",
+      "status": "published",
+      "title": "home"
+    },
+    {
+      "__outstatic": {
+        "commit": "c6de95405ec9463afae6699b8708bdc600000b7f",
+        "hash": "4277788644",
+        "path": "outstatic/content/events/this-is-our-events-page.md"
+      },
+      "author": {
+        "name": "moykul",
+        "picture": "https://avatars.githubusercontent.com/u/13137902?v=4"
+      },
+      "collection": "events",
+      "coverImage": "/images/roflstamp-AzNj.jpg",
+      "description": "",
+      "publishedAt": "2025-03-22T08:51:31.000Z",
+      "slug": "this-is-our-events-page",
+      "status": "draft",
+      "title": "Sumo Qubes WebAR Game Events"
+    },
+    {
+      "__outstatic": {
+        "commit": "7faeed62896b9285c7bbc7d50bd9744c99e4aebb",
+        "hash": "631843493",
+        "path": "outstatic/content/events/sumo-qubes-webar-game.md"
+      },
+      "author": {
+        "name": "moykul",
+        "picture": "https://avatars.githubusercontent.com/u/13137902?v=4"
+      },
+      "collection": "events",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2025-03-22T14:10:18.786Z",
+      "slug": "sumo-qubes-webar-game",
+      "status": "published",
+      "title": "Sumo Qubes WebAR Game ",
+      "upcomingEvents": "List of events we are attending"
+    },
+    {
+      "__outstatic": {
+        "commit": "f76866aa37aabfd248f33012c660977cec5d04ab",
+        "hash": "1818192505",
+        "path": "outstatic/content/pages/events.md"
+      },
+      "author": {
+        "name": "moykul",
+        "picture": "https://avatars.githubusercontent.com/u/13137902?v=4"
+      },
+      "collection": "pages",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2025-03-22T14:15:10.000Z",
+      "slug": "events",
+      "status": "published",
+      "title": "Events"
+    },
+    {
+      "__outstatic": {
+        "commit": "b9b52a6850c7277d0dd8815e796daf082db8065f",
+        "hash": "1204405142",
+        "path": "outstatic/content/posts/newpost.md"
+      },
+      "author": {
+        "name": "moykul",
+        "picture": "https://avatars.githubusercontent.com/u/13137902?v=4"
+      },
+      "collection": "posts",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2025-05-02T12:15:40.644Z",
+      "slug": "newpost",
+      "status": "draft",
+      "tags": [],
+      "title": "newPost"
+    },
+    {
+      "__outstatic": {
+        "commit": "ce5632a012c987654fcd1a23456b789a0123def4",
+        "hash": "3652148974",
+        "path": "outstatic/content/projects/outstatic-the-cms-for-nextjs.md"
+      },
+      "author": {
+        "name": "moykul",
+        "picture": "https://avatars.githubusercontent.com/u/13137902?v=4"
+      },
+      "collection": "projects",
+      "coverImage": "",
+      "description": "Project description",
+      "publishedAt": "2024-08-17T07:50:58.120Z",
+      "slug": "outstatic-the-cms-for-nextjs",
+      "status": "published",
+      "title": "Outstatic the CMS for NextJS"
+    }
+  ]
+}

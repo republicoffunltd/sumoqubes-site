@@ -1,0 +1,36 @@
+/* Base styles for the entire site */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 60, 60, 59;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 249, 249, 249;
+  --primary-color: #da2f6a;
+  --secondary-color: #3c3c3b;
+  --accent-color: #00c8f5;
+  --highlight-color: #f5d547;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

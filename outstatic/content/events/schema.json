@@ -1,0 +1,13 @@
+{
+  "title": "events",
+  "type": "object",
+  "properties": {
+    "upcomingEvents": {
+      "required": true,
+      "description": "upcoming events that we are attending or hosting",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Upcoming events"
+    }
+  }
+}

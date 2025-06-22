@@ -1,0 +1,1448 @@
+@font-face {
+  font-family: 'Porkys';
+  src: url('/fonts/porkys.woff') format('woff'),
+       url('/fonts/porkys.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* General reset and layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: #3c3c3b;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  background-color: #3c3c3b; /* Changed to dark gray */
+  color: white; /* Text color changed to white for dark background */
+}
+
+.navbar.scrolled {
+  background-color: rgba(60, 60, 59, 0.95); /* Dark gray with opacity */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar img {
+  height: 40px;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: white; /* Changed to white */
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.nav-left span {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 30px;
+  color: #da2f6a; /* Pink color for contrast */
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white; /* Changed to white */
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #da2f6a; /* Pink on hover for visibility */
+}
+
+.play-button {
+  background-color: #da2f6a;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'Porkys', sans-serif;
+  cursor: pointer;
+  font-size: 1.2em;
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.play-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.2);
+}
+
+/* Banner Styles */
+.banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  position: relative; /* Change from absolute to relative */
+  margin-bottom: 8px; /* Add spacing between image and button */
+}
+
+/* Container for the banner content moved below image */
+.banner-content {
+  position: relative; /* Change from absolute to relative */
+  text-align: center;
+  z-index: 2;
+  margin-top: -12px; /* Create slight overlap with image */
+  margin-bottom: 30px; /* Add space below button */
+}
+
+.cta-button {
+  background-color: #da2f6a;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Porkys', sans-serif;
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .banner {
+    min-height: auto;
+    padding-top: 72px; /* Space for navbar */
+  }
+  
+  .banner-image {
+    width: 100% !important;
+    max-height: 50vh;
+    margin-bottom: 20px;
+  }
+  
+  .banner-content {
+    position: relative;
+    width: 90% !important;
+    max-width: 300px !important;
+    margin: 0 auto 30px;
+  }
+  
+  .cta-button {
+    font-size: 1.5em;
+    padding: 8px 24px;
+    width: 100%;
+  }
+}
+
+/* Container for the banner content */
+.banner-content {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  text-align: center;
+  z-index: 2;
+}
+
+.cta-button {
+  background-color: #da2f6a;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 15px;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Porkys', sans-serif;
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+  box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.2);
+  animation: shake 0.4s;
+}
+
+/* Bouncing Arrow Styles */
+.down-arrow {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  animation: bounce 2s infinite;
+}
+
+.down-arrow a {
+  color: #fff;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.down-arrow a:visited {
+  color: #fff;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* White Divider Styles */
+.section-divider {
+  height: 1.5vh;
+  background-color: white;
+  position: relative;
+  z-index: 5;
+}
+
+.section-header {
+  font-size: 5em;
+  text-align: center;
+  margin: 0;
+  padding: 40px 0;
+  font-weight: 900;
+  position: relative;
+  color: #ffffff;
+  font-family: 'Porkys', sans-serif; /* Add this line */
+}
+
+/* News Section Styles */
+.news {
+    height: 100vh;
+    background-color: #db2f6a;
+    background-image: url('/images/news-bg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    display: flex;
+}
+
+.news-left {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    gap: 20px;
+}
+
+.news h2 {
+    text-shadow: -4px -4px 0 rgba(0,0,0,0.2),
+        4px -4px 0 #3f8bee,
+        -4px 4px 0 #3f8bee,
+        10px 10px 0 #3f8bee,
+        -4px 0 0 #3f8bee,
+        4px 0 0 #3f8bee,
+        0 -4px 0 #3f8bee,
+        0 4px 0 #3f8bee; /* Fallback for better browser compatibility */
+  }
+
+.find-more {
+    background-color: #f5d547;
+    color: #3c3c3b;
+    border-radius: 10px;
+    font-family: 'Porkys', sans-serif;
+    font-size: 1.2em;
+    width: 121px;
+    height: 36px;
+    border: 0;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.2); /* Adjust shadow for better visibility */
+}
+.find-more:hover {
+    animation: shake 0.4s;
+}
+
+.news-right {
+    flex: 0 0 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.news-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 39px;
+    width: 100%;
+}
+
+.news-item {
+    width: 100%; /* Take full width of grid column */
+    max-width: 595px; /* Restrict maximum width */
+    border-radius: 30px;
+    position: relative;
+}
+
+.news-image-wrapper {
+    border: 10px solid white; /* Border around the image */
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.2); /* Adjust shadow for better visibility */
+}
+
+.news-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Remove any gap or space below image */
+}
+
+.news-subheader {
+    text-align: center; /* Center align the header */
+    font-family: 'Porkys', sans-serif; /* Make sure this line is present */
+    color: white;
+    font-size: 2.3em; /* Increased font size */
+    margin: 10px 0;
+}
+
+.news-more {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 48px;
+    height: 50px;
+    border-radius: 11px 0;
+    background-color: white;
+    border: 0;
+    color: #3c3c3b;
+    font-size: 2em;
+    font-family: 'Porkys', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-more:hover {
+    color: #db2f6a;
+}
+
+/* Leaderboard Section Styles */
+.leaderboard {
+  height: 100vh;
+  background-color: #00c8f5;
+  background-image: url('/images/leaderboard-bg.png');
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leaderboard h2 {
+  text-shadow: -4px -4px 0 rgba(0,0,0,0.2),
+    4px -4px 0 #f94802,
+    -4px 4px 0 #f94802,
+    10px 10px 0 #f94802,
+    -4px 0 0 #f94802,
+    4px 0 0 #f94802,
+    0 -4px 0 #f94802,
+    0 4px 0 #f94802;
+  font-family: 'Porkys', sans-serif;
+  line-height: 1;
+  color: white;
+  font-size: 5em;
+  margin: 0;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.leaderboard-wrapper {
+  display: flex;
+  max-width: 1600px;
+  width: 100%;
+  gap: 280px;
+}
+
+.leaderboard-left {
+  flex: 0 0 60%;
+}
+
+.leaderboard-right {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.leaderboard-nav {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  height: 50px;
+  border-radius: 50px;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+  padding: 0 20px;
+  margin: 20px 0;
+}
+
+.leaderboard-nav a {
+  color: #3c3c3b;
+  font-family: 'Inter', sans-serif;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.leaderboard-nav span {
+  color: #3c3c3b;
+  opacity: 0.5;
+}
+
+.leaderboard-nav a:hover {
+  font-weight: bold;
+}
+
+.leaderboard-nav a.active {
+  color: #00c8f5;
+  font-weight: bold;
+}
+
+.leaderboard-table {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.leaderboard-row {
+  display: flex;
+  gap: 2px;
+  animation: slideUp 0.5s ease-in-out;
+  opacity: 100%;
+  transform: translateY(20px);
+}
+
+.leaderboard-row:nth-child(1) { animation-delay: 0.1s; }
+.leaderboard-row:nth-child(2) { animation-delay: 0.2s; }
+.leaderboard-row:nth-child(3) { animation-delay: 0.3s; }
+.leaderboard-row:nth-child(4) { animation-delay: 0.4s; }
+.leaderboard-row:nth-child(5) { animation-delay: 0.5s; }
+.leaderboard-row:nth-child(6) { animation-delay: 0.6s; }
+.leaderboard-row:nth-child(7) { animation-delay: 0.7s; }
+.leaderboard-row:nth-child(8) { animation-delay: 0.8s; }
+.leaderboard-row:nth-child(9) { animation-delay: 0.9s; }
+.leaderboard-row:nth-child(10) { animation-delay: 1s; }
+
+.leaderboard-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.2);
+  font-family: 'Inter', sans-serif;
+  font-size: 1.7em;
+  color: #3c3c3b;
+}
+
+.cellsize1 { 
+  width: 60px; 
+  height: 60px; 
+  font-weight: bold; 
+  color: #00c8f5;
+}
+
+.cellsize2 { 
+  width: 400px; 
+  height: 60px; 
+  justify-content: left; 
+  color: #3c3c3b; 
+  padding-left: 20px;
+}
+
+.cellsize3 { 
+  width: 120px; 
+  height: 60px;
+}
+
+.cellsize4 { 
+  width: 60px; 
+  height: 60px;
+}
+
+.medal-gold { 
+  background-color: #f5d547; 
+  color: #db2f6a; 
+  font-weight: 900;
+}
+
+.medal-silver { 
+  background-color: #f9df69; 
+  color: #db2f6a; 
+  font-weight: bold;
+}
+
+.medal-bronze { 
+  background-color: #f8e9a4; 
+  color: #db2f6a;
+}
+
+.arrow-up { 
+  color: green;
+}
+
+.arrow-down { 
+  color: red;
+}
+
+.cubeglobe {
+  width: 180px;
+  height: auto;
+  margin: 20px 0;
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(100%); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+.find-more {
+  background-color: #f5d547;
+  color: #3c3c3b;
+  border-radius: 10px;
+  font-family: 'Porkys', sans-serif;
+  font-size: 1.2em;
+  width: 121px;
+  height: 36px;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+.find-more:hover {
+  animation: shake 0.4s;
+}
+
+/* Discover Section Styles */
+.discover {
+  height: 100vh;
+  background-color: #f5d547;
+  background-image: url('/images/discover-bg.png');
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+}
+
+.discover h2 {
+  text-shadow: -4px -4px 0 rgba(0,0,0,0.2),
+      4px -4px 0 #8e4cdc,
+      -4px 4px 0 #8e4cdc,
+      10px 10px 0 #8e4cdc,
+      -4px 0 0 #8e4cdc,
+      4px 0 0 #8e4cdc,
+      0 -4px 0 #8e4cdc,
+      0 4px 0 #8e4cdc; /* Fallback for better browser compatibility */
+  }
+
+
+/* Flex Container */
+.discover-content {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between image and text */
+}
+
+/* Image Styles */
+.discover-image img {
+    max-width: 100%; /* Ensure image scales responsively */
+    height: auto; /* Maintain aspect ratio */
+    padding: 10%;
+}
+
+/* Text Styles */
+.discover-text {
+    display: flex;
+    align-items: center; /* Center header vertically in its container */
+    justify-content: center; /* Center header horizontally in its container */
+}
+
+/* General Footer Styles */
+.footer {
+  background-color: #3c3c3b;
+  color: white;
+  padding: 70px 50px 20px;
+  margin-top: -50px;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 30px;
+}
+
+.social-icons {
+  display: flex;
+  margin-top: 20px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.site-map {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.site-map-column {
+  min-width: 150px;
+  margin-bottom: 30px;
+}
+
+.site-map h3 {
+  color: #f5d547;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.site-map ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-map li {
+  margin-bottom: 10px;
+}
+
+.site-map a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.site-map a:hover {
+  color: #da2f6a;
+}
+
+.footer-right {
+  flex: 1;
+  text-align: right;
+  min-width: 300px;
+}
+
+/* Studio stamp animation */
+.studio-stamp {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+
+.studio-stamp:hover {
+  animation: stampEffect 0.6s ease-out forwards;
+}
+
+@keyframes stampEffect {
+  0% {
+    transform: scale(2) rotate(-30deg);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1.2) rotate(15deg);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(0.9) rotate(-10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #da2f6a;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: opacity 0.3s, transform 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  z-index: 1000;
+  border: none;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-to-top a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+/* Mobile and Responsive Styles for SumoQubes */
+@media (max-width: 768px) {
+  /* Header/Navigation */
+  .navbar {
+    padding: 10px 15px;
+    height: auto;
+  }
+  
+  .nav-left span {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  
+  .nav-left img {
+    height: 30px;
+  }
+  
+  /* Make sure the nav-links in header are hidden on mobile */
+  header .nav-links {
+    display: none !important;
+  }
+  
+  /* Banner Section */
+  .banner {
+    height: 100vh;
+  }
+  
+  /* Hide the arrow in banner section on mobile */
+  .banner .down-arrow {
+    display: none !important;
+  }
+  
+  .banner-content {
+    bottom: 30px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 90%;
+  }
+  
+  .cta-button {
+    font-size: 1.5em;
+    padding: 8px 25px;
+    width: 100%;
+  }
+  
+  .down-arrow {
+    bottom: 30px;
+  }
+
+  /* News Section */
+  .news {
+    height: auto;
+    padding: 40px 15px;
+    flex-direction: column;
+  }
+  
+  .news-left {
+    flex: 0 0 100%;
+    margin-bottom: 30px;
+  }
+  
+  .news h2 {
+    font-size: 3em;
+  }
+  
+  .news-right {
+    flex: 0 0 100%;
+  }
+  
+  .news-grid {
+    gap: 20px;
+  }
+  
+  .news-item {
+    max-width: 100%;
+  }
+  
+  .news-subheader {
+    font-size: 1.8em;
+  }
+
+  /* Leaderboard Section */
+  .leaderboard {
+    height: auto;
+    padding: 40px 15px;
+  }
+  
+  .leaderboard-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .leaderboard-left, .leaderboard-right {
+    flex: 0 0 100%;
+  }
+  
+  .leaderboard h2 {
+    font-size: 3em;
+    padding: 10px 0;
+  }
+  
+  .leaderboard-table {
+    overflow-x: auto;
+  }
+  
+  .leaderboard-row {
+    min-width: 500px; /* Ensure the table doesn't shrink too much */
+  }
+  
+  .leaderboard-nav {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 10px 0;
+  }
+
+  /* Discover Section */
+  .discover {
+    height: auto;
+    padding: 40px 15px;
+  }
+  
+  .discover-content {
+    flex-direction: column;
+  }
+  
+  .discover-image {
+    order: 1;
+    width: 100%;
+  }
+  
+  .discover-text {
+    order: 2;
+    width: 100%;
+  }
+  
+  .discover h2 {
+    font-size: 3em;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 20px 80px;
+    text-align: center;
+  }
+  
+  footer .flex.justify-between {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  footer .flex.flex-col {
+    width: 100%;
+  }
+  
+  footer .flex.gap-4 {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  footer .flex.gap-12 {
+    flex-direction: column;
+    gap: 20px !important;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  footer .flex.gap-12 > div {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-width: 100%;
+  }
+  
+  footer .flex.gap-12 ul {
+    text-align: center;
+    padding-left: 0;
+  }
+  
+  footer .flex.justify-start {
+    justify-content: center !important;
+    margin-top: 30px;
+  }
+  
+  footer .text-center.mt-10 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  footer .text-center.mt-10 a {
+    margin: 0;
+  }
+  
+  /* Up button positioning */
+  footer button {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer .flex.gap-4 a {
+    margin: 0 5px;
+  }
+  
+  footer .flex.gap-4 img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* footer .min-w-[600px] {
+    min-width: 100% !important; 
+  } */
+}
+
+/* Fix for smooth scroll issue */
+.smooth-scroll {
+  cursor: pointer;
+}
+
+/* Animation classes for mobile menu items */
+.mobile-menu-item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-menu-item-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu-item:nth-child(1) { transition-delay: 0.1s; }
+.mobile-menu-item:nth-child(2) { transition-delay: 0.2s; }
+.mobile-menu-item:nth-child(3) { transition-delay: 0.3s; }
+.mobile-menu-item:nth-child(4) { transition-delay: 0.4s; }
+.mobile-menu-item:nth-child(5) { transition-delay: 0.5s; }
+
+/* Add shake animation */
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.hover\:animate-shake:hover {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* Add this at the end of your file */
+
+/* Fix for duplicate mobile menu rendering */
+@media (max-width: 768px) {
+  /* Fix for the "seen-through" mobile menu panel */
+  body > div.py-5.px-4,
+  body > main div.py-5.px-4:not(.relative.z-50 div.py-5.px-4),
+  main > div.py-5.px-4,
+  main > nav.flex.flex-col.space-y-4.items-center:not(.relative.z-50 nav) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  /* Ensure the correct mobile menu is visible */
+  .relative.z-50 div.fixed {
+    pointer-events: auto !important;
+  }
+  
+  /* Fix z-index stacking issues */
+  .relative.z-50 {
+    position: relative;
+    z-index: 50 !important;
+  }
+  
+  /* Make sure transformed menu is properly hidden when not active */
+  .fixed.top-\[65px\].left-0.right-0.-translate-y-full {
+    visibility: hidden !important; 
+    pointer-events: none !important;
+  }
+}
+
+/* Add these updated button styles at the end of your file */
+
+/* Play Button Styles */
+.play-button {
+  background-color: #da2f6a;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'Porkys', sans-serif;
+  cursor: pointer;
+  font-size: 1.2em;
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.play-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.2);
+}
+
+/* Animation for button hover effect */
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.hover\:animate-shake:hover {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* Responsive header adjustments */
+@media (min-width: 769px) {
+  /* Desktop specific adjustments */
+  .nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .play-button {
+    margin-left: 20px;
+    height: 42px !important;
+    width: 120px !important;
+  }
+  
+  /* Ensure proper spacing on desktop */
+  header .nav-right {
+    gap: 15px;
+  }
+}
+
+/* Enhanced mobile banner image styles */
+@media (max-width: 768px) {
+  .banner {
+    height: 100vh;
+    min-height: 500px;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .banner-image {
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    object-position: center 30% !important; /* Adjusted to show more of the upper portion */
+    object-fit: cover !important;
+    scale: 1.2 !important; /* Increased scale to see more of the image */
+  }
+  
+  .banner-content {
+    bottom: 15% !important;
+    right: 0 !important;
+    left: 0 !important;
+    margin: 0 auto !important;
+    width: 90% !important;
+    max-width: 300px !important;
+    z-index: 10 !important; /* Ensure content stays above the scaled image */
+  }
+}
+
+/* Add these styles at the end of your file */
+
+/* Mobile footer improvements */
+@media (max-width: 768px) {
+  /* Make sure all footer content is centered */
+  footer {
+    text-align: center;
+  }
+  
+  /* Social media icons - square but maintain horizontal layout */
+  footer .flex.gap-4 {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto 20px;
+    width: 100%;
+    gap: 12px !important;
+  }
+  
+  /* Make social icons square with consistent size */
+  footer .flex.gap-4 a {
+    margin: 0 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer .flex.gap-4 a img {
+    width: 36px !important;
+    height: 36px !important;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+  }
+  
+  /* Center copyright text */
+  footer .min-w-\[600px\] {
+    min-width: 100% !important;
+    width: 100% !important;
+    text-align: center;
+    padding: 0 10px;
+  }
+  
+  /* Center the tiny links at bottom */
+  footer .text-center.mt-10 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  /* Center the footer right section with stamp */
+  footer .footer-right {
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+  /* Make sure studio stamp is centered */
+  footer .footer-right a {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Ensure ESRB icon is centered */
+  footer .footer-right img {
+    margin: 0 auto;
+  }
+  
+  /* Fix spacing on footer links columns */
+  footer .flex.gap-12 {
+    justify-content: center;
+    gap: 30px !important;
+  }
+  
+  /* Proper centering for footer links section */
+  footer .flex.justify-start {
+    justify-content: center !important;
+  }
+}
+
+/* Adding specific fix for copyright section on mobile */
+@media (max-width: 600px) {
+  footer .min-w-\[600px\] {
+    min-width: 100% !important;
+  }
+  
+  footer span.my-5.block.border-b {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  
+  /* Show the copyright text on mobile */
+  footer p.text-sm.mt-4.hidden.md\:block {
+    display: block !important;
+    font-size: 0.75rem;
+    padding: 0 15px;
+    text-align: center;
+  }
+}
+
+/* Improved footer links centering for mobile */
+@media (max-width: 768px) {
+  /* Center the link lists */
+  footer .flex.gap-12.justify-between {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center !important;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Center each column of links */
+  footer .flex.gap-12 .flex.mx-1.min-w-\[150px\] {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+  }
+  
+  /* Center the lists */
+  footer .flex.gap-12 ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+  
+  /* Center the individual links and add spacing */
+  footer .flex.gap-12 ul li {
+    margin: 8px 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  footer .flex.gap-12 ul li a {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  /* Make social icons perfectly square */
+  footer .flex.gap-4 a img {
+    width: 36px !important;
+    height: 36px !important;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+  }
+}
+
+/* Replace the existing social icons styling */
+
+/* Social media icons size reduction */
+@media (max-width: 768px) {
+  /* Smaller social icons on mobile */
+  footer .flex.gap-4 a img {
+    width: 20px !important;
+    height: 20px !important;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+  }
+  
+  footer .flex.gap-4 {
+    gap: 5px !important;
+  }
+  
+  footer .flex.gap-4 a {
+    margin: 0 2px;
+  }
+}
+
+/* Desktop social icons */
+footer .flex.gap-2.mb-4 a img {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain;
+}
+
+footer .flex.gap-2.mb-4 a {
+  margin: 0 4px;
+}
+
+/* Add these styles at the end of your file */
+
+/* Play Page Styles */
+.play-banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7a29ff; /* Purple theme */
+}
+
+.play-banner .banner-content {
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.play-banner .section-header {
+  text-shadow: -4px -4px 0 rgba(0,0,0,0.2),
+    4px -4px 0 #f94802,
+    -4px 4px 0 #f94802,
+    10px 10px 0 #f94802,
+    -4px 0 0 #f94802,
+    4px 0 0 #f94802,
+    0 -4px 0 #f94802,
+    0 4px 0 #f94802;
+  font-family: 'Porkys', sans-serif;
+  line-height: 1.2;
+  color: white;
+  margin: 0;
+}
+
+/* Mobile styles for play page */
+@media (max-width: 768px) {
+  .play-banner {
+    height: 40vh;
+  }
+  
+  .play-banner .banner-image {
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    object-position: center 30% !important;
+    object-fit: cover !important;
+    scale: 1.2 !important;
+  }
+  
+  .play-banner .section-header {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* Add these specific rules to fix the main banner image scaling */
+
+/* Desktop styles remain unchanged */
+
+/* Mobile specific fixes for banner image */
+@media (max-width: 768px) {
+  .banner {
+    height: auto !important; /* Allow height to adjust based on content */
+    min-height: 300px;
+    max-height: none;
+    overflow: visible;
+  }
+  
+  .banner-image {
+    position: relative !important; /* Change to relative positioning */
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important; /* Allow height to scale proportionally */
+    max-height: 50vh; /* Limit maximum height */
+    transform: none !important;
+    object-fit: contain !important; /* Maintain aspect ratio without cropping */
+    scale: 1 !important; /* Don't scale the image */
+  }
+  
+  /* Make sure content positions correctly */
+  .banner-content {
+    position: relative;
+    bottom: auto !important;
+    margin-top: 20px !important;
+  }
+}
+
+/* Desktop banner image position fix */
+@media (min-width: 769px) {
+  .banner {
+  position: relative;
+  margin-top: 8%;
+  width: 100%;
+  height: 84vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .banner img,
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .banner-content {
+    position: absolute;
+    bottom: 70px; /* Ensure it's above the section divider */
+    right: 100px;
+    text-align: center;
+    z-index: 10; /* Higher z-index */
+    margin-top: 0;
+    max-width: 300px;
+  }
+  
+  .cta-button {
+    position: relative;
+    display: inline-block;
+  }
+}
+
+/* Keep mobile styles as they are now working well */
+@media (max-width: 768px) {
+  /* Mobile styles remain unchanged */
+}
+

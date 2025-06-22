@@ -1,0 +1,96 @@
+{
+  "commit": "b0fe6184a55e5bcfa16fcda07a9f8c078a229be7",
+  "generated": "2025-04-24T18:10:23.921Z",
+  "metadata": [
+    {
+      "__outstatic": {
+        "commit": "3ed8b5f20aa0881ca8ce662d55f39da2d12ccb07",
+        "hash": "2457842491",
+        "path": "/outstatic/content/events/upcoming-events.md"
+      },
+      "author": {
+        "name": "moykul",
+        "picture": "https://avatars.githubusercontent.com/u/13137902?v=4"
+      },
+      "collection": "events",
+      "coverImage": "/images/heroes-k4ND.png",
+      "description": "Fights - coming soon ",
+      "publishedAt": "2025-04-23T16:34:59.489Z",
+      "slug": "upcoming-events",
+      "status": "published",
+      "title": "Upcoming Events"
+    },
+    {
+      "__outstatic": {
+        "commit": "01821c41b9412f993dce24f49a610ca16fbc573b",
+        "hash": "173329360",
+        "path": "/outstatic/content/community/this-is-our-blog.md"
+      },
+      "author": {
+        "name": "moykul",
+        "picture": "https://avatars.githubusercontent.com/u/13137902?v=4"
+      },
+      "collection": "community",
+      "coverImage": "/images/news-image1-A3MT.jpg",
+      "description": "community blog",
+      "publishedAt": "2024-08-11T13:56:27.959Z",
+      "slug": "this-is-our-blog",
+      "status": "published",
+      "title": "This is our Blog"
+    },
+    {
+      "__outstatic": {
+        "commit": "089fa20bc5f8d055db3a821e0c59ca78f3f86559",
+        "hash": "776325322",
+        "path": "outstatic/content/pages/now-play-this.md"
+      },
+      "author": {
+        "name": "moykul",
+        "picture": "https://avatars.githubusercontent.com/u/13137902?v=4"
+      },
+      "collection": "pages",
+      "coverImage": "/images/news-image1-UxMj.jpg",
+      "description": "Play",
+      "publishedAt": "2025-04-23T21:51:14.737Z",
+      "slug": "now-play-this",
+      "status": "published",
+      "title": "Now Play This"
+    },
+    {
+      "__outstatic": {
+        "commit": "b0fe6184a55e5bcfa16fcda07a9f8c078a229be7",
+        "hash": "3998239817",
+        "path": "outstatic/content/play/play.tsx"
+      },
+      "author": {
+        "name": "moykul",
+        "picture": "https://avatars.githubusercontent.com/u/13137902?v=4"
+      },
+      "collection": "play",
+      "coverImage": "/images/news-image1-Y2Mz.jpg",
+      "description": "",
+      "publishedAt": "2025-04-24T18:05:57.778Z",
+      "slug": "play",
+      "status": "published",
+      "title": "Play"
+    },
+    {
+      "__outstatic": {
+        "commit": "b0fe6184a55e5bcfa16fcda07a9f8c078a229be7",
+        "hash": "4007895126",
+        "path": "outstatic/content/play/page.tsx"
+      },
+      "author": {
+        "name": "moykul",
+        "picture": "https://avatars.githubusercontent.com/u/13137902?v=4"
+      },
+      "collection": "play",
+      "coverImage": "/images/game-heroes.png",
+      "description": "Play SumoQubes directly in your browser or fullscreen",
+      "publishedAt": "2025-04-24T18:10:23.921Z",
+      "slug": "page",
+      "status": "published",
+      "title": "Play SumoQubes"
+    }
+  ]
+}
